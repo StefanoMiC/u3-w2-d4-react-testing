@@ -45,11 +45,10 @@ describe("Is h1 mounting correctly h1", () => {
     render(<App />);
     // 2) vado a cercare l'elemento
     const label = screen.getByLabelText(/check me/i);
+    const checkbox = screen.getByTestId("CHECKBOX_ID");
 
     // 3) interazione di tipo click
     fireEvent.click(label);
-
-    const checkbox = screen.getByTestId("CHECKBOX_ID");
 
     // 4) verifica delle aspettative
     expect(checkbox).toBeInTheDocument();
